@@ -106,7 +106,7 @@
 </div>
 
 <div class="col-2" id="show_{{$emp['id']}}">
- <a onclick="showcontent('{{$emp[',id,']}}', true)">  <label>show</label>
+ <a onclick="showcontent('{{$emp['id']}}', true)">  <label>show</label>
  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-down" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1h-2z"/>
   <path fill-rule="evenodd" d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
@@ -121,7 +121,7 @@
 </div>
 
 <div class="col-1">
-<a onclick="return confirm('Are you sure you want to delete employee {{$emp[',name,']}} ?')" href={{"delete/".$emp['id']}}> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#7d2828" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+<a onclick="return confirm('Are you sure you want to delete employee {{$emp['name']}} ?')" href={{"delete/".$emp['id']}}> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#7d2828" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
   <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
 </svg></a>
 </div>
@@ -135,7 +135,7 @@
 <div class="col-6 " style="color:#478e19;display:none" id="content2_{{$emp['id']}}">
 <div>Created Date: {{$emp['created_at']}}</div>
 <div>Last Update: {{$emp['updated_at']}}</div>
-<a onclick="hidecontent('{{$emp[',id,']}}',true)" > <div >
+<a onclick="hidecontent('{{$emp['id']}}',true)" > <div >
    <label style="color:black">hide</label>
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-box-arrow-in-up" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M3.5 10a.5.5 0 0 1-.5-.5v-8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 0 0 1h2A1.5 1.5 0 0 0 14 9.5v-8A1.5 1.5 0 0 0 12.5 0h-9A1.5 1.5 0 0 0 2 1.5v8A1.5 1.5 0 0 0 3.5 11h2a.5.5 0 0 0 0-1h-2z"/>
