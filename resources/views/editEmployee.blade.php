@@ -21,25 +21,26 @@
   <strong>Congratulations!</strong> Employee inserted successfully.
 </div>
 @endif
-<div class="container-fluid" style="min-height:500px">
+<div class="container-fluid" style="min-height:550px">
 
 <div class="row">
 
 <div class="col-md-5" style="padding-top:100px"> 
 
-<form action="employees" method="post">
+<form action="/edit" method="post">
                                 @csrf 
+                                <input type="hidden" name="id" value="{{$employee['id']}}"  >
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <div class="form-group"> <label>Name*</label><input name="name" type="text" class="form-control" placeholder="Enter Employee Name"> 
+                                            <div class="form-group"> <label>Name*</label><input name="name" value="{{$employee['name']}}" type="text" class="form-control" placeholder="Enter Employee Name"> 
                                             <span  class="font-weight-bold text-danger" style="font-family:revert; font-size:77%">@error('name'){{$message}}@enderror</span>
                                         </div></div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>Gender*</label> <select name="gender" class="form-control">
+                                                <label>Gender*</label> <select name="gender" value="{{$employee['gender']}}" class="form-control">
                                                     <option value="" selected disabled>Select Gender</option>
-                                                    <option>Male</option>
-                                                    <option>Female</option>
+                                                    <option {{"Male" == $employee['gender']?'selected':''}}>Male</option>
+                                                    <option {{"Female" == $employee['gender']?'selected':''}}>Female</option>
                                                 </select>
                                                 <span class="font-weight-bold text-danger" style="font-family:revert; font-size:77%">@error('gender'){{$message}}@enderror</span>
                                             </div>
@@ -48,24 +49,24 @@
 
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <div  class="form-group"> <label>Contact No.</label> <input name="number" type="number" class="form-control" placeholder="Enter Contact Number"> </div>
+                                                <div  class="form-group"> <label>Contact No.</label> <input name="number" value="{{$employee['number']}}" type="number" class="form-control" placeholder="Enter Contact Number"> </div>
                                             </div>
                                         <div class="col-md-6">
-                                            <div  class="form-group"> <label>NIC</label> <input name="nic" class="form-control" placeholder="Enter NIC Number"> </div>
+                                            <div  class="form-group"> <label>NIC</label> <input name="nic" value="{{$employee['nic']}}" class="form-control" placeholder="Enter NIC Number"> </div>
                                         </div> 
                                     </div>
 
                              
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <div class="form-group"> <label >Address</label> <textarea name="address" class="form-control" placeholder="Enter Employee Address" rows="3"></textarea> </div>
+                                            <div class="form-group"> <label >Address</label> <textarea name="address" value="{{$employee['address']}}" class="form-control" placeholder="Enter Employee Address" rows="3"></textarea> </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <div class="form-group"> <label>Special Notes</label> <textarea name="notes" class="form-control" placeholder="Special Notes About Employee" rows="3"></textarea> </div>
+                                            <div class="form-group"> <label>Special Notes</label> <textarea name="notes" value="{{$employee['notes']}}" class="form-control" placeholder="Special Notes About Employee" rows="3"></textarea> </div>
                                         </div>
                                     </div>
                                         <div class="row">
-                                            <div class="col-md-12"> <input type="submit" class="btn pt-2 btn-block " value="ADD EMPLOYEE"> </div>
+                                            <div class="col-md-12"> <input type="submit" class="btn pt-2 btn-block " value="UPDATE EMPLOYEE"> </div>
                                         </div>
                             </form>
 
@@ -113,14 +114,14 @@
 </div>
 
 <div class="col-1">
-<a><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#407082" class="bi bi-pencil-square" viewBox="0 0 16 16">
+<a href={{"/edit/".$emp['id']}}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#407082" class="bi bi-pencil-square" viewBox="0 0 16 16">
   <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
   <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
 </svg></a>
 </div>
 
 <div class="col-1">
-<a onclick="return confirm('Are you sure you want to delete employee {{$emp->name}}?' )" href={{"delete/".$emp['id']}}> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#7d2828" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+<a onclick="return confirm('Are you sure you want to delete employee {{$emp->name}}?' )" href={{"/delete/".$emp['id']}}> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#7d2828" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
   <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
 </svg></a>
 </div>
@@ -177,4 +178,4 @@ function hidecontent(id, isclicked){
 
 </body>
 
-<html>
+<html>  

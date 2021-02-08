@@ -13,24 +13,12 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar navbar-nav ">
             
-                        <li class="dropdown ">
-                            <a href="#" class="dropdown-toggle text-white text-decoration-none mr-5" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">EMPLOYEES<span class="caret"></span></a>
+                    <li><a class="text-white text-decoration-none mr-3" href="/">DASHBOARD</a></li>
 
-                            <ul class="dropdown-menu ">
-                                <li><a class="text-decoration-none text-white" href="employees" >VIEW EMPLOYEES</a></li>
-                                <li><a class="text-decoration-none text-white" href="/" >ADD EMPLOYEES</a></li>
-                            </ul>
-                        </li>
+                    <li><a class="text-white text-decoration-none mr-3" href="/employees">EMPLOYEES</a></li>
+                        
 
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle text-white text-decoration-none mr-5" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CROPS<span class="caret"></span></a>
-                           
-
-                            <ul class="dropdown-menu ">
-                                <li><a class="text-decoration-none text-white" >VIEW CROPS</a></li>
-                                <li><a class="text-decoration-none text-white"  >ADD CROPS</a></li>
-                            </ul>
-                        </li>
+                    <li><a class="text-white text-decoration-none mr-3" href="/crops">CROPS</a></li>
 
                     </ul>
                 </div>

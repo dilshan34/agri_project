@@ -1,3 +1,7 @@
+body{
+    background-color: white;
+}
+
 div.card-body.mt-5{
     border: solid;
     border-color: #26391f;
@@ -64,8 +68,7 @@ button.route:hover{
     background-color:rgb(112, 106, 106);
     color: white;
 }
-
-body#admin{
-    background-color: #91919147;
-    
+div.col-6.text-center:hover{
+    transition: 0.5s ease-in-out;
+    margin-left: 30px;
 }
