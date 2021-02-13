@@ -1,0 +1,74 @@
+body{
+    background-color: white;
+}
+
+div.card-body.mt-5{
+    border: solid;
+    border-color: #26391f;
+    border-radius: 12px;
+}
+input.btn.pt-2.btn-block{
+    background-color: #26391f;
+    color: white;
+}
+a:hover{
+    cursor: pointer;
+}
+
+div.row.emp{
+    background-color: #ffffff5c;
+    margin:0  2px 15px 2px;
+    border-radius: 7px;
+    padding: 9px;
+    border: solid #214b1f52;
+
+}
+label{
+    font-size: 13px;
+}
+button.view{
+    background-color: black;
+    border-radius: 10px;
+    border: 0;
+    font-size: 12px;
+    padding: 8px;
+    color: white;
+}
+button.edit{
+    background-color: #673e10;
+    border-radius: 10px;
+    border: 0;
+    font-size: 12px;
+    padding: 8px;
+    color: white;
+}
+button.delete{
+    background-color: #460707;
+    border-radius: 10px;
+    border: 0;
+    font-size: 12px;
+    padding: 8px;
+    color: white;
+}
+ul.dropdown-menu.show{
+    background-color: #000000c4;
+    text-align: center;
+}
+div.btn-group{
+    margin-top: 50px;
+    margin-bottom: 33px;
+}
+button.route{
+    width: 90px;
+    border: 0;
+    background-color: #bebbbb;
+}
+button.route:hover{
+    transition: 1s;
+    background-color:rgb(112, 106, 106);
+    color: white;
+}
+div.col-6.text-center:hover{
+    transition: 0.5s ease-in-out;
+    margin-left: 30px;
+}
